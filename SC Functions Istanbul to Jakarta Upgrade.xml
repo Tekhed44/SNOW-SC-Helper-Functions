@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2017-10-10 06:28:47">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value=""/>
+<application_name/>
+<application_scope/>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>SC Functions Istanbul to Jakarta Upgrade</name>
+<origin_sys_id/>
+<release_date/>
+<remote_sys_id>30c5c254dbb903403217f3861d961976</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>JLINC08.SA</sys_created_by>
+<sys_created_on>2017-10-10 06:28:47</sys_created_on>
+<sys_id>ac464a54dbb903403217f3861d961981</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>JLINC08.SA</sys_updated_by>
+<sys_updated_on>2017-10-10 06:28:47</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_widget_efed4ec0dbb007c03217f3861d96192b</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;client_script&gt;&lt;![CDATA[function($scope) {
+	/* widget controller */
+	var c = this;
+
+
+	
+	//ForceField Helpers - Start
+
+
+	//System Account main action onChange
+	//This is just clearing and making not mandatory
+	c.forceFieldSpec = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setMandatory(hiddenfields[j], false);
+			var fieldz =  $scope.page.g_form.getValue(hiddenfields[j]);
+			if (fieldz != '' &amp;&amp;  fieldz != ' ' &amp;&amp; fieldz != 'false' &amp;&amp; fieldz != 'Please Select' &amp;&amp; fieldz != 'Application ID'){
+				$scope.page.g_form.setValue(hiddenfields[j], '');  
+			}
+		}
+	}
+
+
+	//Hide
+	//Clear value &amp; hide &amp; not mandatory 
+	c.forceFieldHide = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.clearValue(hiddenfields[j]);
+			$scope.page.g_form.setMandatory(hiddenfields[j], false);
+			$scope.page.g_form.setDisplay(hiddenfields[j], false);
+		}
+	}
+
+
+
+	//Show
+	c.forceFieldShow = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setDisplay(hiddenfields[j], true);
+		}
+	}
+
+
+	//Show
+	//Make mandatory
+	c.forceFieldShowMan = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setMandatory(hiddenfields[j], true);
+			$scope.page.g_form.setDisplay(hiddenfields[j], true);
+		}
+	}
+
+
+	//Clear value
+	c.forceFieldClear = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.clearValue(hiddenfields[j]);
+		}
+	}
+	
+	
+		//Null value
+	c.forceFieldNull = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setValue(hiddenfields[j],'');			
+		}
+	}
+
+
+	//Not mandatory
+	c.forceFieldNoman = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setMandatory(hiddenfields[j], false);
+		}
+	}
+	
+	
+		//Read only
+	c.forceFieldRead = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setReadOnly(hiddenfields[j], true);
+		}
+	}
+	
+	
+		//Not read only
+	c.forceFieldNoread = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setReadOnly(hiddenfields[j], false);
+		}
+	}
+
+
+	
+		//ForceField Helpers - End
+
+
+
+}
+
+
+
+
+]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;sc_functions&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;sc_functions&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;JLINC08&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2017-08-20 19:21:03&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;efed4ec0dbb007c03217f3861d96192b&lt;/sys_id&gt;&lt;sys_mod_count&gt;294&lt;/sys_mod_count&gt;&lt;sys_name&gt;sc_functions&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_efed4ec0dbb007c03217f3861d96192b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;JLINC08.SA&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2017-10-10 06:28:08&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div id="divID"&gt;
+  &lt;script type="text/javascript"&gt;
+
+    //Mass manipulate fields. We can do a mass hide, mass show, or mass 'anything' with this, just send'
+    //an array list
+    function forceField(){
+
+
+      //System Account main action onChange
+      //This is just clearing and making not mandatory
+      this.spec = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldSpec(list);
+      }
+
+
+      //Hide
+      //Clear value &amp; hide &amp; not mandatory 
+      this.hide = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldHide(list);
+      }
+
+
+      //Show
+      this.show = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldShow(list);
+      }
+
+
+      //Show
+      //Make mandatory
+      this.showMan = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldShowMan(list);
+      }
+
+
+      //Clear value
+      this.clear = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldClear(list);
+      }
+
+
+      //Null value
+      this.nul = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldNull(list);
+      }
+
+      //Not mandatory
+      this.noMan = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldNoman(list);
+      }
+
+      //Read only
+      this.read = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldRead(list);
+      }
+
+      //Not read only
+      this.noRead = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldNoread(list);
+      }
+
+    }
+
+
+
+
+    function guardian(){
+
+      this.clas = function(element,id,style,val){		
+        var ele = element;
+        var iid = id;
+        var stl = style;
+        var vl = val;	
+
+        //Istanbul &amp; Jakarta
+        try{
+          doc().querySelectorAll(ele)[iid].style[stl] = vl;
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+      };
+
+      this.ele = function(element,style,val){
+        var ele = element;
+        var stl = style;
+        var vl = val;	
+
+        //Istanbul &amp; Jakarta
+        try{
+          doc().getElementById(ele).style[stl] = vl;
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+      };
+
+
+      this.hideVset = function(id){
+
+        //Jakarta
+        var id2 = id - 1;
+        try{
+          doc().querySelectorAll('fieldset')[id2].style.display = "none";
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+
+
+      };
+
+
+      this.showVset = function(id){
+        //Jakarta
+        var id2 = id - 1;
+        try{
+          doc().querySelectorAll('fieldset')[id2].style.display = "block";
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+
+      };	
+
+
+      this.hideVsetAll = function(start){
+
+        //Jakarta
+        var startt = start - 1;
+        try{
+          //Hide Variable Set Titles
+          var divs0 = doc().querySelectorAll('fieldset'), i;
+          for (i = startt; i &lt; divs0.length; ++i) {
+            divs0[i].style.display = "none";
+          }
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+
+
+
+      };
+
+
+      this.showVsetAll = function(start){
+        //Jakarta
+        var startt = start - 1;
+        try{
+          //Hide Variable Set Titles
+          var divs0 = doc().querySelectorAll('fieldset'), i;
+          for (i = startt; i &lt; divs0.length; ++i) {
+            divs0[i].style.display = "block";
+          }
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }      
+
+
+      };
+
+      //Hide form submit button set
+      this.hideSubmit = function(){
+        //Istanbul &amp; Jakarta
+        try{
+          var start = 0;
+          var divs0 = doc().querySelectorAll('div.b-t.wrapper-md.ng-scope'), i;
+          for (i = start; i &lt; divs0.length; ++i) {
+            divs0[i].style.display = "none";
+          }
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+
+
+      };
+
+      //Show form submit button set
+      this.showSubmit = function(){
+        //Istanbul &amp; Jakarta
+        try{
+          var start = 0;
+          var divs0 = doc().querySelectorAll('div.b-t.wrapper-md.ng-scope'), i;
+          for (i = start; i &lt; divs0.length; ++i) {
+            divs0[i].style.display = "block";
+          }
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+
+      };
+
+
+      //Add HTML Capability to Field Messages
+      //Credit: Jason Meyers 
+      this.fieldMessagesToHtml = function(){
+        //Istanbul &amp; Jakarta
+        try{
+          setTimeout(function () {
+            var start = 0;
+            var msgContent = doc().querySelectorAll('div.wrapper-xs.r.m-t-xs.ng-binding.ng-scope'), i;
+            for (i = start; i &lt; msgContent.length; ++i) { 
+              var val = msgContent[i].innerText;
+              msgContent[i].innerHTML = val;
+              msgContent[i].style.paddingLeft = "5px";            
+            }           
+          }, 50);
+
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+      };
+
+
+
+
+    }
+  &lt;/script&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+<remote_update_set display_value="SC Functions Istanbul to Jakarta Upgrade">ac464a54dbb903403217f3861d961981</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>JLINC08.SA</sys_created_by>
+<sys_created_on>2017-10-10 06:28:47</sys_created_on>
+<sys_id>a4464a54dbb903403217f3861d961982</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>JLINC08.SA</sys_updated_by>
+<sys_updated_on>2017-10-10 06:28:47</sys_updated_on>
+<table/>
+<target_name>sc_functions</target_name>
+<type>Widget</type>
+<update_domain>global</update_domain>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
