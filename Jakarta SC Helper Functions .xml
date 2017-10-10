@@ -1,0 +1,654 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<unload unload_date="2017-10-10 05:55:10">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Global">global</application>
+<application_name>Global</application_name>
+<application_scope>global</application_scope>
+<application_version/>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description/>
+<inserted/>
+<name>Jakarta SC Helper Functions </name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>3b7e5d58dbb1030059d0d001cf9619a5</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>jdeluna</sys_created_by>
+<sys_created_on>2017-10-10 05:55:10</sys_created_on>
+<sys_id>489ef518dbf1030059d0d001cf96192d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>jdeluna</sys_updated_by>
+<sys_updated_on>2017-10-10 05:55:10</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_widget_efed4ec0dbb007c03217f3861d96192b</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;client_script&gt;&lt;![CDATA[function($scope) {
+	/* widget controller */
+	var c = this;
+
+
+	
+	//ForceField Helpers - Start
+
+
+	//System Account main action onChange
+	//This is just clearing and making not mandatory
+	c.forceFieldSpec = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setMandatory(hiddenfields[j], false);
+			var fieldz =  $scope.page.g_form.getValue(hiddenfields[j]);
+			if (fieldz != '' &amp;&amp;  fieldz != ' ' &amp;&amp; fieldz != 'false' &amp;&amp; fieldz != 'Please Select' &amp;&amp; fieldz != 'Application ID'){
+				$scope.page.g_form.setValue(hiddenfields[j], '');  
+			}
+		}
+	}
+
+
+	//Hide
+	//Clear value &amp; hide &amp; not mandatory 
+	c.forceFieldHide = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.clearValue(hiddenfields[j]);
+			$scope.page.g_form.setMandatory(hiddenfields[j], false);
+			$scope.page.g_form.setDisplay(hiddenfields[j], false);
+		}
+	}
+
+
+
+	//Show
+	c.forceFieldShow = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setDisplay(hiddenfields[j], true);
+		}
+	}
+
+
+	//Show
+	//Make mandatory
+	c.forceFieldShowMan = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setMandatory(hiddenfields[j], true);
+			$scope.page.g_form.setDisplay(hiddenfields[j], true);
+		}
+	}
+
+
+	//Clear value
+	c.forceFieldClear = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.clearValue(hiddenfields[j]);
+		}
+	}
+	
+	
+		//Null value
+	c.forceFieldNull = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setValue(hiddenfields[j],'');			
+		}
+	}
+
+
+	//Not mandatory
+	c.forceFieldNoman = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setMandatory(hiddenfields[j], false);
+		}
+	}
+	
+	
+		//Read only
+	c.forceFieldRead = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setReadOnly(hiddenfields[j], true);
+		}
+	}
+	
+	
+		//Not read only
+	c.forceFieldNoread = function(list){			
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			$scope.page.g_form.setReadOnly(hiddenfields[j], false);
+		}
+	}
+
+
+	
+		//ForceField Helpers - End
+
+
+
+}
+
+
+
+
+]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;sc_functions&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;sc_functions&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;JLINC08&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2017-08-20 19:21:03&lt;/sys_created_on&gt;&lt;sys_id&gt;efed4ec0dbb007c03217f3861d96192b&lt;/sys_id&gt;&lt;sys_mod_count&gt;320&lt;/sys_mod_count&gt;&lt;sys_name&gt;sc_functions&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_efed4ec0dbb007c03217f3861d96192b&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;jdeluna&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2017-10-10 05:48:52&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div id="divID"&gt;
+  &lt;script type="text/javascript"&gt;
+
+    //Mass manipulate fields. We can do a mass hide, mass show, or mass 'anything' with this, just send'
+    //an array list
+    function forceField(){
+
+
+      //System Account main action onChange
+      //This is just clearing and making not mandatory
+      this.spec = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldSpec(list);
+      }
+
+
+      //Hide
+      //Clear value &amp; hide &amp; not mandatory 
+      this.hide = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldHide(list);
+      }
+
+
+      //Show
+      this.show = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldShow(list);
+      }
+
+
+      //Show
+      //Make mandatory
+      this.showMan = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldShowMan(list);
+      }
+
+
+      //Clear value
+      this.clear = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldClear(list);
+      }
+
+
+      //Null value
+      this.nul = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldNull(list);
+      }
+
+      //Not mandatory
+      this.noMan = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldNoman(list);
+      }
+
+      //Read only
+      this.read = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldRead(list);
+      }
+
+      //Not read only
+      this.noRead = function(list){        
+        angular.element(document.getElementById('divID')).scope().c.forceFieldNoread(list);
+      }
+
+    }
+
+
+
+
+    function guardian(){
+
+      this.clas = function(element,id,style,val){		
+        var ele = element;
+        var iid = id;
+        var stl = style;
+        var vl = val;	
+
+        //Istanbul &amp; Jakarta
+        try{
+          doc().querySelectorAll(ele)[iid].style[stl] = vl;
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+      };
+
+      this.ele = function(element,style,val){
+        var ele = element;
+        var stl = style;
+        var vl = val;	
+
+        //Istanbul &amp; Jakarta
+        try{
+          doc().getElementById(ele).style[stl] = vl;
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+      };
+
+
+      this.hideVset = function(id){
+
+        //Jakarta
+        var id2 = id - 1;
+        try{
+          doc().querySelectorAll('fieldset')[id2].style.display = "none";
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+
+
+      };
+
+
+      this.showVset = function(id){
+        //Jakarta
+        var id2 = id - 1;
+        try{
+          doc().querySelectorAll('fieldset')[id2].style.display = "block";
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+
+      };	
+
+
+      this.hideVsetAll = function(start){
+
+        //Jakarta
+        var startt = start - 1;
+        try{
+          //Hide Variable Set Titles
+          var divs0 = doc().querySelectorAll('fieldset'), i;
+          for (i = startt; i &lt; divs0.length; ++i) {
+            divs0[i].style.display = "none";
+          }
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+
+
+
+      };
+
+
+      this.showVsetAll = function(start){
+        //Jakarta
+        var startt = start - 1;
+        try{
+          //Hide Variable Set Titles
+          var divs0 = doc().querySelectorAll('fieldset'), i;
+          for (i = startt; i &lt; divs0.length; ++i) {
+            divs0[i].style.display = "block";
+          }
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }      
+
+
+      };
+
+      //Hide form submit button set
+      this.hideSubmit = function(){
+        //Istanbul &amp; Jakarta
+        try{
+          var start = 0;
+          var divs0 = doc().querySelectorAll('div.b-t.wrapper-md.ng-scope'), i;
+          for (i = start; i &lt; divs0.length; ++i) {
+            divs0[i].style.display = "none";
+          }
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+
+
+      };
+
+      //Show form submit button set
+      this.showSubmit = function(){
+        //Istanbul &amp; Jakarta
+        try{
+          var start = 0;
+          var divs0 = doc().querySelectorAll('div.b-t.wrapper-md.ng-scope'), i;
+          for (i = start; i &lt; divs0.length; ++i) {
+            divs0[i].style.display = "block";
+          }
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+
+      };
+
+
+      //Add HTML Capability to Field Messages
+      //Credit: Jason Meyers 
+      this.fieldMessagesToHtml = function(){
+        //Istanbul &amp; Jakarta
+        try{
+          setTimeout(function () {
+            var start = 0;
+            var msgContent = doc().querySelectorAll('div.wrapper-xs.r.m-t-xs.ng-binding.ng-scope'), i;
+            for (i = start; i &lt; msgContent.length; ++i) { 
+              var val = msgContent[i].innerText;
+              msgContent[i].innerHTML = val;
+              msgContent[i].style.paddingLeft = "5px";            
+            }           
+          }, 50);
+
+        }catch(e){
+          console.log(e);  //console.warn Works as well
+        }
+      };
+
+
+
+
+    }
+  &lt;/script&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-1314928602</payload_hash>
+<remote_update_set display_value="Jakarta SC Helper Functions ">489ef518dbf1030059d0d001cf96192d</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jdeluna</sys_created_by>
+<sys_created_on>2017-10-10 05:55:10</sys_created_on>
+<sys_id>049ef518dbf1030059d0d001cf96192f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>15f04d424930000001</sys_recorded_at>
+<sys_updated_by>jdeluna</sys_updated_by>
+<sys_updated_on>2017-10-10 05:55:10</sys_updated_on>
+<table/>
+<target_name>sc_functions</target_name>
+<type>Widget</type>
+<update_domain>global</update_domain>
+<update_guid>731df99401f10300de4102bbbf7f5f20</update_guid>
+<update_guid_history>731df99401f10300de4102bbbf7f5f20:-1314928602,1dcab514cdf10300c70b13bc4107a9d8:899074205,80a53914def10300da850730569274ce:1461756359,6765b5141ef103005c1d03dd760620d1:-83734668,3d15f910f4f10300a8bb2e1bc5742316:-616073853,f1f4f114fff1030056a57ee60d9978b2:-1994170660,bbc431149af1030030be2299ccbdb7a8:-398394099,2e843114dcf10300a4cec919716c4ea2:-1729674439,1d747dd001f10300e535d93c7432a085:-1781324455,a414b9d0adf103007dd28efd0e2c6994:-1684406424,2db3b9d009f10300b7a3ff70f1da4c16:-391063658,8e63b5d07cf1030010eb9cca64ce7e4e:-199569102,7253f9107bf10300e74df83c3105c885:-2086280262,0123bd9cd1b10300977befcedcfa4661:-1549522652,31f235d071f10300311ed38232885aa5:-1888384892,8bd2315099f10300cb932e3be5326747:1563458828,3d6ded1072f10300d5c1712c6cdd5323:-972911874,340de510e3f103006667c058ca8ce3de:2100342505,08dce110a6f10300410454a480bd9e1e:890761664,ea7ae5dc9bb103009e7e2853b09e5860:935730556,661aed987cb1030029659411c94075c9:2143802497,694921d8e7b1030034817cffba69f554:-207718820,e97221d81fb10300ccea701d4c0d164e:468829584,f922add8e8b10300f5cc8cd0deb19f3d:-1106845488,1df0e99832b10300033dbb2eebac4238:-937169886,4210a1980fb10300b6f5f77a23b4c1c4:-11811349,157f5d5893b1030042628fe64947f86b:525514192,bcfcfc544071030027a2d4130d0a56e2:-648154154,633e595863b10300eea12f72f0960368:-648154154,1b8dd11836b103002d96e1b27f5423ad:-820522897,042d5518b3b10300d1812287ee4788c4:404889995,fccc1d185ab10300c8a93fc1a50821c9:415345555,4f0bddd4cab103006b8c7605b54b2daa:1202367004,819ad9d42ab103002481d6529b5405f9:-1607357832,e58ad1d4c9b103005bfce596e23ad071:-1744434974,6b091d94f2b103007e658611b05a6eb2:1310068651,038819946fb103009ea2c7dde89bdc60:1359176176,dc28d5548eb103002719ab92af692fb0:-1470980761,9f655914c4b103002469da24d66ca956:1531116141,bcfcfc544071030027a2d4130d0a56e2:-648154154,2a005190f7b10300102e6c27c48eb03c:-648154154,afc9499cc471030093756f0215f9fa74:143075207,01898d5c35710300c09e2992540a43e0:-710309143,5c49c55ca9710300856ce92507e2f91a:1259413778,d328495c0d7103008740ba93482ff86d:458940248,8518cd5ca971030076ed0814a24726d2:898179610,2de7455caa71030005985ecafddb8057:-216900974,abc74d5cc571030022be5aa0c28e7b8b:458940248,080489d8b0710300077c99d4ca1f71b7:1100264818,bcfcfc544071030027a2d4130d0a56e2:-648154154,c27f7cd46b7103008f9eee94e2ed12b9:-648154154,bcfcfc544071030027a2d4130d0a56e2:-648154154,bcfcfc544071030027a2d4130d0a56e2:-648154154,997cb454f6710300717315715af1cb1c:-648154154,997cb454f6710300717315715af1cb1c:-648154154,880bf014467103006ad4661e800c0c85:-92401982</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>item_option_new_2952d350db388f000949f1431d9619e8</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="item_option_new"><item_option_new action="INSERT_OR_UPDATE"><active>true</active><attributes/><cat_item/><category/><choice_direction>down</choice_direction><choice_field/><choice_table/><create_roles/><default_html_value/><default_value/><delete_roles/><delivery_plan/><description/><display_title>false</display_title><do_not_select_first>false</do_not_select_first><dynamic_default_value/><dynamic_ref_qual/><example_text/><field/><global>false</global><help_tag>More information</help_tag><help_text/><include_none>false</include_none><instructions/><layout>normal</layout><list_table/><lookup_label/><lookup_price/><lookup_table/><lookup_unique>false</lookup_unique><lookup_value/><macro/><mandatory>false</mandatory><map_to_field>false</map_to_field><mask_use_confirmation>false</mask_use_confirmation><mask_use_encryption>false</mask_use_encryption><name>sc_functions</name><order>1</order><price_if_checked>0</price_if_checked><pricing_implications>false</pricing_implications><question_text>sc_functions</question_text><read_roles/><rec_lookup_price/><rec_price_if_checked>0</rec_price_if_checked><record/><record_producer_table/><reference/><reference_qual/><reference_qual_condition/><scale_max>5</scale_max><scale_min>0</scale_min><show_help>false</show_help><show_help_on_load>false</show_help_on_load><sp_widget display_value="sc_functions">efed4ec0dbb007c03217f3861d96192b</sp_widget><summary_macro/><sys_class_name>item_option_new</sys_class_name><sys_created_by>JLINC08.SA</sys_created_by><sys_created_on>2017-08-21 18:59:08</sys_created_on><sys_id>2952d350db388f000949f1431d9619e8</sys_id><sys_mod_count>2</sys_mod_count><sys_name>sc_functions</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>item_option_new_2952d350db388f000949f1431d9619e8</sys_update_name><sys_updated_by>nobody</sys_updated_by><sys_updated_on>2017-10-10 01:15:53</sys_updated_on><table/><tooltip/><type>14</type><ui_page/><use_dynamic_default>false</use_dynamic_default><use_reference_qualifier>simple</use_reference_qualifier><variable_name/><variable_set display_value="SC_FUNCTIONS">0f63b740dbfc47c03217f3861d961971</variable_set><variable_width/><visibility>1</visibility><visible_bundle>true</visible_bundle><visible_guide>true</visible_guide><visible_standalone>true</visible_standalone><visible_summary>true</visible_summary><write_roles/></item_option_new><sys_translated_text action="delete_multiple" query="documentkey=2952d350db388f000949f1431d9619e8"/><fx_price action="delete_multiple" query="id=2952d350db388f000949f1431d9619e8"/><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>price_if_checked</field><id>2952d350db388f000949f1431d9619e8</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>system</sys_created_by><sys_created_on>2017-10-10 01:14:03</sys_created_on><sys_id>8a3ef894db71030059d0d001cf9619fc</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>system</sys_updated_by><sys_updated_on>2017-10-10 01:14:03</sys_updated_on><table>item_option_new</table><type>calculated</type></fx_price><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>rec_price_if_checked</field><id>2952d350db388f000949f1431d9619e8</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>system</sys_created_by><sys_created_on>2017-10-10 01:14:03</sys_created_on><sys_id>4e3ef894db71030059d0d001cf9619fa</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>system</sys_updated_by><sys_updated_on>2017-10-10 01:14:03</sys_updated_on><table>item_option_new</table><type>calculated</type></fx_price></record_update>]]></payload>
+<payload_hash>-705267623</payload_hash>
+<remote_update_set display_value="Jakarta SC Helper Functions ">489ef518dbf1030059d0d001cf96192d</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jdeluna</sys_created_by>
+<sys_created_on>2017-10-10 05:55:10</sys_created_on>
+<sys_id>089ef518dbf1030059d0d001cf96192e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>15f03da37a90000001</sys_recorded_at>
+<sys_updated_by>jdeluna</sys_updated_by>
+<sys_updated_on>2017-10-10 05:55:10</sys_updated_on>
+<table/>
+<target_name>sc_functions</target_name>
+<type>Variable</type>
+<update_domain>global</update_domain>
+<update_guid>01ae70d458710300dd278fafb974ef1e</update_guid>
+<update_guid_history>01ae70d458710300dd278fafb974ef1e:-705267623,933e595882b10300c10689859014554a:122572850,01ae70d458710300dd278fafb974ef1e:-705267623,de00519005b10300f67b22cc6a8c141f:122572850,01ae70d458710300dd278fafb974ef1e:-705267623,317f7cd402710300abcc8adf1032689e:122572850,01ae70d458710300dd278fafb974ef1e:-705267623,f8fcfc5424710300ddd5e26fea0f30bb:122572850,f8fcfc5424710300ddd5e26fea0f30bb:122572850,857c7454ea710300109f518f9d12c7f9:122572850,857c7454ea710300109f518f9d12c7f9:122572850,4c0bf014867103007bde2382de2ee772:1808416459</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>sp_widget_47dd9bd4db3cc34059c7f9a41d9619d1</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_widget"&gt;&lt;sp_widget action="INSERT_OR_UPDATE"&gt;&lt;client_script&gt;&lt;![CDATA[function($scope) {
+  /* widget controller */
+  var c = this;
+}]]&gt;&lt;/client_script&gt;&lt;controller_as&gt;c&lt;/controller_as&gt;&lt;css/&gt;&lt;data_table&gt;sp_instance&lt;/data_table&gt;&lt;demo_data/&gt;&lt;description/&gt;&lt;docs/&gt;&lt;field_list/&gt;&lt;has_preview&gt;false&lt;/has_preview&gt;&lt;id&gt;sc_doc&lt;/id&gt;&lt;internal&gt;false&lt;/internal&gt;&lt;link/&gt;&lt;name&gt;sc_doc&lt;/name&gt;&lt;option_schema/&gt;&lt;public&gt;false&lt;/public&gt;&lt;roles/&gt;&lt;script&gt;&lt;![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]&gt;&lt;/script&gt;&lt;servicenow&gt;false&lt;/servicenow&gt;&lt;sys_class_name&gt;sp_widget&lt;/sys_class_name&gt;&lt;sys_created_by&gt;JLINC08&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2017-08-21 19:48:44&lt;/sys_created_on&gt;&lt;sys_customer_update&gt;true&lt;/sys_customer_update&gt;&lt;sys_id&gt;47dd9bd4db3cc34059c7f9a41d9619d1&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name&gt;sc_doc&lt;/sys_name&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_replace_on_upgrade&gt;false&lt;/sys_replace_on_upgrade&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_widget_47dd9bd4db3cc34059c7f9a41d9619d1&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;JLINC08&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2017-08-21 19:50:20&lt;/sys_updated_on&gt;&lt;template&gt;&lt;![CDATA[&lt;div id="divID2"&gt;
+  &lt;script type="text/javascript"&gt;
+    function doc() {
+var iframe = parent.document.getElementById('gsft_main');
+	var innerDoc = '';
+	if(iframe){
+		innerDoc =  iframe.contentDocument  || iframe.contentWindow.document;
+	}else{
+		innerDoc =  parent.document;
+	}
+	return innerDoc;
+}    
+  &lt;/script&gt;
+&lt;/div&gt;]]&gt;&lt;/template&gt;&lt;/sp_widget&gt;&lt;/record_update&gt;</payload>
+<payload_hash/>
+<remote_update_set display_value="Jakarta SC Helper Functions ">489ef518dbf1030059d0d001cf96192d</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jdeluna</sys_created_by>
+<sys_created_on>2017-10-10 05:55:10</sys_created_on>
+<sys_id>409ef518dbf1030059d0d001cf96192f</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>15ee85dc8f00000000</sys_recorded_at>
+<sys_updated_by>jdeluna</sys_updated_by>
+<sys_updated_on>2017-10-10 05:55:10</sys_updated_on>
+<table/>
+<target_name>sc_doc</target_name>
+<type>Widget</type>
+<update_domain>global</update_domain>
+<update_guid/>
+<update_guid_history>f8fcfc542f7103003008f864bbfaa0dc:953590321,273e595819b1030094c70f47c70d2b62:953590321,f8fcfc542f7103003008f864bbfaa0dc:953590321,ea005190f6b10300961d2d2875d48b36:953590321,f8fcfc542f7103003008f864bbfaa0dc:953590321,027f7cd4ac71030069614139b6efddb3:953590321,f8fcfc542f7103003008f864bbfaa0dc:953590321,f8fcfc542f7103003008f864bbfaa0dc:953590321,097cb45454710300c1579486f38a5616:953590321,097cb45454710300c1579486f38a5616:953590321,c80bf014f1710300511cc0af793e0b77:582559557</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>catalog_script_client_6a733b40dbfc47c03217f3861d9619b0</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="catalog_script_client"&gt;&lt;catalog_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_catalog&gt;false&lt;/applies_catalog&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;applies_req_item&gt;true&lt;/applies_req_item&gt;&lt;applies_sc_task&gt;true&lt;/applies_sc_task&gt;&lt;applies_target_record&gt;false&lt;/applies_target_record&gt;&lt;applies_to&gt;set&lt;/applies_to&gt;&lt;cat_item/&gt;&lt;cat_variable/&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;messages/&gt;&lt;name&gt;onLoad_Backend_Functions&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+	//Type appropriate comment here, and begin script below
+}
+
+function forceField(){
+
+	this.full = function(list){
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+
+			var fieldz = g_form.getValue(hiddenfields[j]);
+			if (fieldz == '' || fieldz == ' ' || fieldz == 'false'){
+				g_form.setMandatory(hiddenfields[j], false);  
+				g_form.setDisplay(hiddenfields[j], false);
+			}
+		}
+	};
+
+
+	this.show = function(list){
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			g_form.setDisplay(hiddenfields[j], true);
+		}
+	};
+
+	this.showMan = function(list){
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			g_form.setDisplay(hiddenfields[j], true);
+			g_form.setMandatory(hiddenfields[j], true);
+		}
+	};
+
+
+	this.hide = function(list){
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			g_form.setMandatory(hiddenfields[j], false);
+			g_form.setDisplay(hiddenfields[j], false);
+		}
+	};
+
+
+	this.clear = function(list){
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			g_form.clearValue(hiddenfields[j]);
+		}
+	};
+
+
+	this.nul = function(list){
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			g_form.setValue(hiddenfields[j],'');
+		}
+	};
+
+
+	this.noMan = function(list){
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			g_form.setMandatory(hiddenfields[j], false);
+		}
+	};
+
+	this.read = function(list){
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			g_form.setReadOnly(hiddenfields[j], true);
+		}
+	};
+
+	this.noRead = function(list){
+		var hiddenfields = list, j;
+		for (j = 0; j &lt; hiddenfields.length; ++j) {	
+			g_form.setReadOnly(hiddenfields[j], false);
+		}
+	};
+
+}
+
+]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;catalog_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;JLINC08&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2017-08-21 02:45:38&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;6a733b40dbfc47c03217f3861d9619b0&lt;/sys_id&gt;&lt;sys_mod_count&gt;18&lt;/sys_mod_count&gt;&lt;sys_name&gt;onLoad_Backend_Functions&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;catalog_script_client_6a733b40dbfc47c03217f3861d9619b0&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;nobody&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2017-10-10 01:17:29&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;variable_set display_value="SC_FUNCTIONS"&gt;0f63b740dbfc47c03217f3861d961971&lt;/variable_set&gt;&lt;view/&gt;&lt;/catalog_script_client&gt;&lt;/record_update&gt;</payload>
+<payload_hash>2001335722</payload_hash>
+<remote_update_set display_value="Jakarta SC Helper Functions ">489ef518dbf1030059d0d001cf96192d</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jdeluna</sys_created_by>
+<sys_created_on>2017-10-10 05:55:10</sys_created_on>
+<sys_id>449ef518dbf1030059d0d001cf96192e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>15f03dbae6e0000001</sys_recorded_at>
+<sys_updated_by>jdeluna</sys_updated_by>
+<sys_updated_on>2017-10-10 05:55:10</sys_updated_on>
+<table/>
+<target_name>onLoad_Backend_Functions</target_name>
+<type>Catalog Client Scripts</type>
+<update_domain>global</update_domain>
+<update_guid>100f3c94ed710300ea68f98a3c7c797a</update_guid>
+<update_guid_history>100f3c94ed710300ea68f98a3c7c797a:2001335722,9f3e595803b10300633286f5a185ae34:302485958,100f3c94ed710300ea68f98a3c7c797a:2001335722,1600519090b10300850d53e6b49e710f:302485958,100f3c94ed710300ea68f98a3c7c797a:2001335722,7d7f7cd4847103003961e3da8baa2199:302485958,100f3c94ed710300ea68f98a3c7c797a:2001335722,68fcfc547871030004a66aa6fbe685b6:302485958,68fcfc547871030004a66aa6fbe685b6:302485958,cd7c74545f7103008a50f7138bbd8ddc:302485958,cd7c74545f7103008a50f7138bbd8ddc:302485958,cc0bf0148e7103000cd6768865d2b76d:1500125890</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>catalog_script_client_250f78d4db71030059d0d001cf961980</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="catalog_script_client"&gt;&lt;catalog_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_catalog&gt;true&lt;/applies_catalog&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;applies_req_item&gt;false&lt;/applies_req_item&gt;&lt;applies_sc_task&gt;false&lt;/applies_sc_task&gt;&lt;applies_target_record&gt;false&lt;/applies_target_record&gt;&lt;applies_to&gt;set&lt;/applies_to&gt;&lt;cat_item/&gt;&lt;cat_variable/&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;messages/&gt;&lt;name&gt;onLoad_Actions&lt;/name&gt;&lt;order/&gt;&lt;script&gt;&lt;![CDATA[function onLoad() {
+g_form.setDisplay('sc_doc',false);
+g_form.setDisplay('sc_functions',false);
+   
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;catalog_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;nobody&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2017-10-10 01:17:58&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path/&gt;&lt;sys_id&gt;250f78d4db71030059d0d001cf961980&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_name&gt;onLoad_Actions&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Global" source="global"&gt;global&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Global"&gt;global&lt;/sys_scope&gt;&lt;sys_update_name&gt;catalog_script_client_250f78d4db71030059d0d001cf961980&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;nobody&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2017-10-10 01:17:58&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;type&gt;onLoad&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;variable_set display_value="SC_FUNCTIONS"&gt;0f63b740dbfc47c03217f3861d961971&lt;/variable_set&gt;&lt;view/&gt;&lt;/catalog_script_client&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1446718550</payload_hash>
+<remote_update_set display_value="Jakarta SC Helper Functions ">489ef518dbf1030059d0d001cf96192d</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jdeluna</sys_created_by>
+<sys_created_on>2017-10-10 05:55:10</sys_created_on>
+<sys_id>4c9ef518dbf1030059d0d001cf96192d</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>15f03dc20b80000001</sys_recorded_at>
+<sys_updated_by>jdeluna</sys_updated_by>
+<sys_updated_on>2017-10-10 05:55:10</sys_updated_on>
+<table/>
+<target_name>onLoad_Actions</target_name>
+<type>Catalog Client Scripts</type>
+<update_domain>global</update_domain>
+<update_guid>ab1f78d4d3710300d5968c043a726c86</update_guid>
+<update_guid_history>ab1f78d4d3710300d5968c043a726c86:1446718550,db3e595885b103001fd51099e2ad532f:1250817989,ab1f78d4d3710300d5968c043a726c86:1446718550,d60051901db10300d9f9a415e417f70a:1250817989,e234cdd87d71030023c29b3bcf719a3d:1250817989,ab1f78d4d3710300d5968c043a726c86:1446718550,797f7cd4757103009dc0780451b9f797:1250817989,ab1f78d4d3710300d5968c043a726c86:1446718550</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>item_option_new_set_0f63b740dbfc47c03217f3861d961971</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="item_option_new_set"><item_option_new_set action="INSERT_OR_UPDATE"><description>This variable set is comprised of two elements, one Macro variable and one onLoad client script.  The Macro variable is linked to the Service Portal widget SC_Functions as a way to expose all of SNOWs APIs to a reuseable code model. Currently this does not exist OOB. The onLoad client script allows for the same functionality, but for CMS and the RITM/Task views. 
+
+Simply add this variable set to your catalog item to gain access to  the following helper functions:
+
+-  guardian():  Allows for the manipulation of individual page elements (labels, text boxes...anything)
+-  forceField(): Allows for the capability of applying Glide Form functions to a large number of variables at the exact same time (g_form.setDisplay, g_form.setMandatory...etc).
+
+</description><display_title>false</display_title><layout>normal</layout><name>SC_FUNCTIONS</name><order>100000</order><sys_class_name>item_option_new_set</sys_class_name><sys_created_by>JLINC08</sys_created_by><sys_created_on>2017-08-21 02:44:38</sys_created_on><sys_customer_update>true</sys_customer_update><sys_id>0f63b740dbfc47c03217f3861d961971</sys_id><sys_mod_count>3</sys_mod_count><sys_name>SC_FUNCTIONS</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_replace_on_upgrade>false</sys_replace_on_upgrade><sys_scope display_value="Global">global</sys_scope><sys_update_name>item_option_new_set_0f63b740dbfc47c03217f3861d961971</sys_update_name><sys_updated_by>JLINC08.SA</sys_updated_by><sys_updated_on>2017-08-21 19:00:00</sys_updated_on><title/></item_option_new_set></record_update>]]></payload>
+<payload_hash/>
+<remote_update_set display_value="Jakarta SC Helper Functions ">489ef518dbf1030059d0d001cf96192d</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jdeluna</sys_created_by>
+<sys_created_on>2017-10-10 05:55:10</sys_created_on>
+<sys_id>8c9ef518dbf1030059d0d001cf96192e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>15ee85dc8f00000000</sys_recorded_at>
+<sys_updated_by>jdeluna</sys_updated_by>
+<sys_updated_on>2017-10-10 05:55:10</sys_updated_on>
+<table/>
+<target_name>SC_FUNCTIONS</target_name>
+<type>Variable Set</type>
+<update_domain>global</update_domain>
+<update_guid/>
+<update_guid_history>bcfcfc54f0710300103fccc8369264d4:-1475119629,d33e595803b1030035af03e344630d57:-1475119629,bcfcfc54f0710300103fccc8369264d4:-1475119629,5e0051903fb10300fc8c888aac779d2c:-1475119629,bcfcfc54f0710300103fccc8369264d4:-1475119629,f17f7cd47871030018fc1a6ad2ad1fab:-1475119629,bcfcfc54f0710300103fccc8369264d4:-1475119629,bcfcfc54f0710300103fccc8369264d4:-1475119629,097cb4540b710300ed6492a90005450d:-1475119629,097cb4540b710300ed6492a90005450d:-1475119629,400bf014b57103002999fca297173276:337671391</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Global">global</application>
+<category>customer</category>
+<comments/>
+<name>item_option_new_524e5f18db3cc34059c7f9a41d961998</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="item_option_new"><item_option_new action="INSERT_OR_UPDATE"><active>true</active><attributes/><cat_item/><category/><choice_direction>down</choice_direction><choice_field/><choice_table/><create_roles/><default_html_value/><default_value/><delete_roles/><delivery_plan/><description/><display_title>false</display_title><do_not_select_first>false</do_not_select_first><dynamic_default_value/><dynamic_ref_qual/><example_text/><field/><global>false</global><help_tag>More information</help_tag><help_text/><include_none>false</include_none><instructions/><layout>normal</layout><list_table/><lookup_label/><lookup_price/><lookup_table/><lookup_unique>false</lookup_unique><lookup_value/><macro/><mandatory>false</mandatory><map_to_field>false</map_to_field><mask_use_confirmation>false</mask_use_confirmation><mask_use_encryption>false</mask_use_encryption><name>sc_doc</name><order>0</order><price_if_checked>0</price_if_checked><pricing_implications>false</pricing_implications><question_text>sc_doc</question_text><read_roles/><rec_lookup_price/><rec_price_if_checked>0</rec_price_if_checked><record/><record_producer_table/><reference/><reference_qual/><reference_qual_condition/><scale_max>5</scale_max><scale_min>0</scale_min><show_help>false</show_help><show_help_on_load>false</show_help_on_load><sp_widget display_value="sc_doc">47dd9bd4db3cc34059c7f9a41d9619d1</sp_widget><summary_macro/><sys_class_name>item_option_new</sys_class_name><sys_created_by>JLINC08.SA</sys_created_by><sys_created_on>2017-08-21 19:51:04</sys_created_on><sys_id>524e5f18db3cc34059c7f9a41d961998</sys_id><sys_mod_count>2</sys_mod_count><sys_name>sc_doc</sys_name><sys_package display_value="Global" source="global">global</sys_package><sys_policy/><sys_scope display_value="Global">global</sys_scope><sys_update_name>item_option_new_524e5f18db3cc34059c7f9a41d961998</sys_update_name><sys_updated_by>nobody</sys_updated_by><sys_updated_on>2017-10-10 01:16:17</sys_updated_on><table/><tooltip/><type>14</type><ui_page/><use_dynamic_default>false</use_dynamic_default><use_reference_qualifier>simple</use_reference_qualifier><variable_name/><variable_set display_value="SC_FUNCTIONS">0f63b740dbfc47c03217f3861d961971</variable_set><variable_width/><visibility>1</visibility><visible_bundle>true</visible_bundle><visible_guide>true</visible_guide><visible_standalone>true</visible_standalone><visible_summary>true</visible_summary><write_roles/></item_option_new><sys_translated_text action="delete_multiple" query="documentkey=524e5f18db3cc34059c7f9a41d961998"/><fx_price action="delete_multiple" query="id=524e5f18db3cc34059c7f9a41d961998"/><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>price_if_checked</field><id>524e5f18db3cc34059c7f9a41d961998</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>system</sys_created_by><sys_created_on>2017-10-10 01:14:03</sys_created_on><sys_id>823e7c94db71030059d0d001cf961936</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>system</sys_updated_by><sys_updated_on>2017-10-10 01:14:03</sys_updated_on><table>item_option_new</table><type>calculated</type></fx_price><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="USD">USD</currency><field>rec_price_if_checked</field><id>524e5f18db3cc34059c7f9a41d961998</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>system</sys_created_by><sys_created_on>2017-10-10 01:14:03</sys_created_on><sys_id>c23e7c94db71030059d0d001cf961935</sys_id><sys_mod_count>0</sys_mod_count><sys_updated_by>system</sys_updated_by><sys_updated_on>2017-10-10 01:14:03</sys_updated_on><table>item_option_new</table><type>calculated</type></fx_price></record_update>]]></payload>
+<payload_hash>105359511</payload_hash>
+<remote_update_set display_value="Jakarta SC Helper Functions ">489ef518dbf1030059d0d001cf96192d</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>jdeluna</sys_created_by>
+<sys_created_on>2017-10-10 05:55:10</sys_created_on>
+<sys_id>c89ef518dbf1030059d0d001cf96192e</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>15f03da969f0000001</sys_recorded_at>
+<sys_updated_by>jdeluna</sys_updated_by>
+<sys_updated_on>2017-10-10 05:55:10</sys_updated_on>
+<table/>
+<target_name>sc_doc</target_name>
+<type>Variable</type>
+<update_domain>global</update_domain>
+<update_guid>febe7894f07103002bee731d8c442236</update_guid>
+<update_guid_history>febe7894f07103002bee731d8c442236:105359511,573e59588fb10300677baaeb3caf6852:498866624,febe7894f07103002bee731d8c442236:105359511,1a00519092b10300cbb6ef45d70cf027:498866624,a4644dd81f7103007f4e04d759414471:472835142,febe7894f07103002bee731d8c442236:105359511,bd7f7cd4f2710300e4ae276d608636a5:498866624,febe7894f07103002bee731d8c442236:105359511,30fcfc547f7103005a1bd473575572d0:498866624,30fcfc547f7103005a1bd473575572d0:498866624,4d7cb4547e7103005c635a9c26f93501:498866624,4d7cb4547e7103005c635a9c26f93501:498866624,480bf014a9710300f11296c5edef1474:-1315631425</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>
